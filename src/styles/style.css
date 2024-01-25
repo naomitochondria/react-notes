@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;700&display=swap');
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color:#0f0f0f;
+}
+
+.notes-app {
+    margin: 5px;
+}
+
+#action-bar {
+    padding: 10px;
+}
+
+#action-bar__search{
+    background-color: #1a1a1a;
+    border-radius: 20px;
+    padding: 5px;
+    display: inline;
+}
+
+#action-bar__search-title {
+    width: 50%;
+    border: none;
+    background-color: #1a1a1a;
+    color: aliceblue;
+    padding-left: 10px;
+    font-size: 16px;
+}
+
+#action-bar__search-button {
+    background-color: #1a1a1a;;
+    border: none;
+    padding-right: 10px;
+    cursor: pointer;
+    color: aliceblue;
+}
+
+#action-bar__search-button:hover {
+    color: #4f4e4e
+}
+
+#action-bar__add-button { 
+    background-color: #28057a;
+    float: right;
+    border: none;
+    border-radius: 5px;
+    color: aliceblue;
+    font-size: 14px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+#action-bar__add-button:hover { 
+    background-color: #4208ca;
+}
+
+#sidebar {
+    background-color: #171717;
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidebar__item {
+    margin: 0 20px 10px 20px;
+    text-decoration: none;
+    color: #737373;
+    display: block;
+}
+
+a:hover {
+    color: aliceblue;
+    cursor: pointer;
+}
+
+#notes-display {
+    margin: 10px 20px;
+    transition: 0.5s;
+}
+
+.sidebar-button {
+    background-color: #0f0f0f;
+    color: aliceblue;
+    border: none;
+    font-size: 20px;
+}
+
+.sidebar-button:hover {
+    cursor: pointer;
+}
+
+.sidebar__close-button {
+    background-color: #171717;
+    color: aliceblue;
+    margin-right: 10px;
+    border: none;
+    float: right;
+    font-size: 24px;
+}
+
+.sidebar__close-button:hover {
+    cursor: pointer;
+}
+
+#modal {
+    background-color: #1a1a1a;
+    border-radius: 5px;
+    color: aliceblue;
+    display: none;
+    position: fixed;
+    width: 95%;
+    margin: 10px 20px;
+    z-index: 1;
+    padding: 10px;
+    overflow: auto;
+}
+
+.modal__form-group {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+#modal__form-title, #modal__form-body {
+    background-color: #2e2e2e;
+    color: aliceblue;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.modal__form-status {
+    margin: 10px;
+}
+
+.modal__title-char {
+    font-size: 12px;
+}
+
+#modal__form button {
+    color: aliceblue;
+    border: none;
+    border-radius: 2px;
+    font-weight: bold;
+    padding: 5px;
+}
+
+#modal__add-button {
+    background-color: #0ecf3b;
+}
+
+#modal__close-button {
+    float: right;
+    cursor: pointer;
+}
+
+.notes-list {
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.notes-list__item {
+    flex-basis: 30%;
+    text-align: justify;
+    color: aliceblue;
+}
+
+.notes-list__item-title, .notes-list__item-body{
+    padding: 10px;
+}
+
+.notes-list__item-title {
+    font-weight: 600;
+    background-color: #2a2a2b;
+}
+
+.notes-list__item-date {
+    background-color: #2a2a2b;
+    padding: 5px 10px;
+}
+
+.notes-list__item-body {
+    padding-top: 10px;
+    background-color: #202021;
+}
+
+.notes-list__item-action {
+    display: flex;
+    text-align: center;
+    background-color: #202021;
+    cursor: pointer;
+}
+
+.notes-list__item-action-archive {
+    flex-basis: 50%;
+    color: orange;
+    padding-bottom: 10px;
+}
+
+.notes-list__item-action-delete {
+    flex-basis: 50%;
+    color: red;
+    padding-bottom: 10px;
+}
+
+.notes-list__item-action-archive:hover, .notes-list__item-action-delete:hover {
+    font-weight: bold;
+}
+
+.notes-empty-message {
+    text-align: center;
+    font-size: 24px;
+    color: aliceblue;
+}
+
+@media screen and (max-width: 768px) {
+    .action-bar {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #action-bar__search-title{
+        width: 85%;
+    }
+
+    #action-bar__add-button { 
+        display: block;
+        margin-top: 10px;
+    }
+
+    #action-bar__search-button {
+        padding-right: 0px;
+    }
+
+    #modal {
+        width: 80%;
+        padding: 20px;
+    }
+
+    .notes-list__item  {
+        gap: 5px;
+        flex-basis: 100%;
+    }
+
+    .notes-list__item-action-archive, .notes-list__item-action-delete {
+        font-weight: bold;
+    }
+}
